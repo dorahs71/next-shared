@@ -1,0 +1,19 @@
+.logoWrapper {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    filter: drop-shadow(0 0 4px #C1FFCF);
+}
+
+.logoText {
+    font-size: 1.5rem;
+    color: #262626;
+    font-weight: bolder;
+}
+

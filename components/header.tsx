@@ -1,8 +1,12 @@
+import styles from './header.module.css';
+
 export default function Header() {
   return (
     <>
-      <img src="/logo.svg" alt="shared logo" />
-      <h1>Welcome to Shared!</h1>
+      <div className={styles.logoWrapper}>
+        <img className={styles.logo} src="/logo.svg" alt="shared logo" />
+        <div className={styles.logoText}>Shared</div>
+      </div>
     </>
   );
 }
