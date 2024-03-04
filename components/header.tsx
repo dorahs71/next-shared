@@ -5,7 +5,7 @@ export default function Header() {
     <>
       <div className={styles.logoWrapper}>
         <img className={styles.logo} src="/logo.svg" alt="shared logo" />
-        <div className={styles.logoText}>Shared</div>
+        <div className={styles.logoText}>SHARED</div>
       </div>
     </>
   );
