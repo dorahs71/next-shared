@@ -1,10 +1,10 @@
 import { SlideShowImage } from '@/components/slideshow/slideshow';
 
-import cookieImg from '@/assets/meals/cookie.png';
-import salmonImg from '@/assets/meals/salmon.png';
-import steakImg from '@/assets/meals/steak.png';
-import waffleImg from '@/assets/meals/waffle.png';
-import yogurtImg from '@/assets/meals/yogurt.png';
+import cookieImg from '@/assets/meals/cookie.jpeg';
+import salmonImg from '@/assets/meals/salmon.webp';
+import steakImg from '@/assets/meals/steak.jpeg';
+import waffleImg from '@/assets/meals/waffle.jpeg';
+import yogurtImg from '@/assets/meals/yogurt.jpeg';
 
 export const homeSlideShowImages: SlideShowImage[] = [
   { image: cookieImg, alt: 'A delicious cookie' },
