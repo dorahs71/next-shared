@@ -9,7 +9,7 @@ export default function MainHeader() {
     <>
       <MainHeaderBackground />
       <header className={styles.header}>
-        <Link className={styles.logoWrapper} href="/public">
+        <Link className={styles.logoWrapper} href="/">
           <Image className={styles.logo} src={logo} alt="shared logo" priority />
           <div className={styles.logoText}>SHARED</div>
         </Link>
