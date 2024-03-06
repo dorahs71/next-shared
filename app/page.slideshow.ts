@@ -10,6 +10,6 @@ export const homeSlideShowImages: SlideShowImage[] = [
   { image: cookieImg, alt: 'A delicious cookie' },
   { image: salmonImg, alt: 'A delicious salmon' },
   { image: steakImg, alt: 'A delicious steak' },
-  { image: waffleImg, alt: 'A delicious wa  ' },
+  { image: waffleImg, alt: 'A delicious waffle' },
   { image: yogurtImg, alt: 'A delicious yogurt' },
 ];
