@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './slideshow.module.css';
 import Image, { StaticImageData } from 'next/image';
 import { useEffect, useState } from 'react';
