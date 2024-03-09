@@ -15,7 +15,7 @@ export default function Home() {
             <h1>Enjoy NextLevel Food</h1>
             <p>Taste & share food from all over the world!</p>
           </div>
-          <div className={styles.cta}>
+          <div className={'cta'}>
             <Link href="/community">Join the Community</Link>
             <Link href="/meals">Explore Meals</Link>
           </div>
