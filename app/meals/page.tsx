@@ -1,6 +1,17 @@
 import Link from 'next/link';
 
 import styles from './page.module.css';
+import MealsGrid from '@/components/meals/meals-grid';
+import { StaticImageData } from 'next/image';
+
+export interface Meal {
+  id: number;
+  title: string;
+  slug: string;
+  image: StaticImageData;
+  summary: string;
+  creator: string;
+}
 
 export default function MealsPage() {
   return (
@@ -14,7 +25,9 @@ export default function MealsPage() {
           <Link href="/meals/share">Share Your Favorite Recipe</Link>
         </p>
       </header>
-      <main className={styles.main}></main>
+      <main className={styles.main}>
+        <MealsGrid meals={[]} />
+      </main>
     </>
   );
 }
