@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import MealsGrid from '@/components/meals/meals-grid';
 import { getMeals } from '@/lib/meals';
+import { Suspense } from 'react';
+import Loading from '@/components/loading/loading';
 
 export interface Meal {
   id: number;
@@ -13,8 +15,12 @@ export interface Meal {
   creator: string;
 }
 
-export default async function MealsPage() {
+async function MealContainer() {
   const meals = await getMeals();
+  return <MealsGrid meals={meals} />;
+}
+
+export default function MealsPage() {
   return (
     <>
       <header className={styles.header}>
@@ -27,7 +33,9 @@ export default async function MealsPage() {
         </p>
       </header>
       <div>
-        <MealsGrid meals={meals} />
+        <Suspense fallback={<Loading />}>
+          <MealContainer />
+        </Suspense>
       </div>
     </>
   );
