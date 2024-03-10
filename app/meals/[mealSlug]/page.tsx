@@ -2,6 +2,7 @@ import styles from './page.module.css';
 import { getMealDetail } from '@/lib/meals';
 import { Meal } from '@/initdb';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 export default async function MealDetailsPage({
   params,
@@ -9,6 +10,11 @@ export default async function MealDetailsPage({
   params: { mealSlug: string };
 }) {
   const meal: Meal = await getMealDetail(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
   meal.instructions = meal.instructions.replace(/\n/g, '<br />');
   return (
     <>
