@@ -5,18 +5,10 @@ import MealsGrid from '@/components/meals/meals-grid';
 import { getMeals } from '@/lib/meals';
 import { Suspense } from 'react';
 import Loading from '@/components/loading/loading';
-
-export interface Meal {
-  id: number;
-  title: string;
-  slug: string;
-  image: string;
-  summary: string;
-  creator: string;
-}
+import { Meal } from '@/initdb';
 
 async function MealContainer() {
-  const meals = await getMeals();
+  const meals: Meal[] = await getMeals();
   return <MealsGrid meals={meals} />;
 }
 

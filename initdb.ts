@@ -1,6 +1,6 @@
 const sql = require('better-sqlite3');
 
-interface Meal {
+export interface Meal {
   title: string;
   slug: string;
   image: string;
@@ -19,8 +19,7 @@ const dummyMeals: Meal[] = [
     image: '/images/burger.jpeg',
     summary:
       'A mouth-watering burger with a juicy beef patty and melted cheese, served in a soft bun.',
-    instructions: `
-1. Prepare the patty:
+    instructions: `1. Prepare the patty:
   Mix 200g of ground beef with salt and pepper. Form into a patty.
 
 2. Cook the patty:
