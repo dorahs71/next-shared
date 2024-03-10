@@ -18,8 +18,10 @@ export default function MealItem({ title, slug, image, summary, creator }: Meal)
       </header>
       <div className={styles.content}>
         <p className={styles.summary}>{summary}</p>
-        <div className={'cta'}>
-          <Link href={`/meals/${slug}`}>View Details</Link>
+        <div className={styles.details}>
+          <Link className={styles.link} href={`/meals/${slug}`}>
+            View Details
+          </Link>
         </div>
       </div>
     </article>
