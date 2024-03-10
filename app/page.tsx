@@ -6,7 +6,7 @@ import { homeSlideShowImages } from './page.slideshow';
 export default function Home() {
   return (
     <>
-      <main className={styles.intro}>
+      <div className={styles.intro}>
         <div className={styles.slideshow}>
           <SlideShow images={homeSlideShowImages} />
         </div>
@@ -20,7 +20,7 @@ export default function Home() {
             <Link href="/meals">Explore Meals</Link>
           </div>
         </div>
-      </main>
+      </div>
     </>
   );
 }

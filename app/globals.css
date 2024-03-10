@@ -12,8 +12,13 @@ html {
 body {
     height: 100%;
     margin: 0 3rem;
-    background: linear-gradient(180deg, #38363e, #231e2d);
+    background: radial-gradient(#38363e, #231e2d);
     color: #ddd8e4;
+    width: 90%;
+}
+
+main {
+    margin: 6rem 3rem;
 }
 
 h1 {
