@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS meals (
 
 async function initData() {
   const stmt = db.prepare(`
-INSERT INTO meals VALUES (
+INSERT or REPLACE INTO meals VALUES (
   null,
   @slug,
   @title,
