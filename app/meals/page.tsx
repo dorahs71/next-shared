@@ -2,18 +2,19 @@ import Link from 'next/link';
 
 import styles from './page.module.css';
 import MealsGrid from '@/components/meals/meals-grid';
-import { StaticImageData } from 'next/image';
+import { getMeals } from '@/lib/meals';
 
 export interface Meal {
   id: number;
   title: string;
   slug: string;
-  image: StaticImageData;
+  image: string;
   summary: string;
   creator: string;
 }
 
-export default function MealsPage() {
+export default async function MealsPage() {
+  const meals = await getMeals();
   return (
     <>
       <header className={styles.header}>
@@ -25,9 +26,9 @@ export default function MealsPage() {
           <Link href="/meals/share">Share Your Favorite Recipe</Link>
         </p>
       </header>
-      <main className={styles.main}>
-        <MealsGrid meals={[]} />
-      </main>
+      <div>
+        <MealsGrid meals={meals} />
+      </div>
     </>
   );
 }
