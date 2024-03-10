@@ -1,9 +1,6 @@
 .intro {
     display: flex;
     gap: 3rem;
-    margin: 6rem auto;
-    width: 90%;
-    max-width: 75rem;
 }
 
 .slideshow {

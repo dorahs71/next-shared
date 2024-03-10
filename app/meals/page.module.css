@@ -1,10 +1,10 @@
 .header {
     gap: 3rem;
-    margin: 3rem auto 5rem auto;
     width: 90%;
     max-width: 75rem;
     color: #ddd6cb;
     font-size: 1.5rem;
+    margin-bottom: 5rem;
 }
 
 .header h1 {
