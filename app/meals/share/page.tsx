@@ -3,9 +3,9 @@ import styles from './page.module.css';
 export default function ShareMealPage() {
   return (
     <>
-      <header className={styles.header}>
+      <header className={'header'}>
         <h1>
-          Share your <span className={styles.highlight}>favorite meal</span>
+          Share your <span className={'highlight'}>favorite meal</span>
         </h1>
         <p>Or any other meal you feel needs sharing!</p>
       </header>

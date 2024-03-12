@@ -8,15 +8,14 @@ import styles from './page.module.css';
 export default function CommunityPage() {
   return (
     <>
-      <header className={styles.header}>
+      <header className={'header'}>
         <h1>
-          One shared passion: <span className={styles.highlight}>Food</span>
+          One shared passion: <span className={'highlight'}>Food</span>
         </h1>
         <p>Join our community and share your favorite recipes!</p>
-      </header>
-      <main className={styles.main}>
         <h2>Community Perks</h2>
-
+      </header>
+      <div>
         <ul className={styles.perks}>
           <li>
             <p>Share & discover recipes</p>
@@ -31,7 +30,7 @@ export default function CommunityPage() {
             <Image src={eventsIcon} alt="A crowd of people at a cooking event" />
           </li>
         </ul>
-      </main>
+      </div>
     </>
   );
 }
