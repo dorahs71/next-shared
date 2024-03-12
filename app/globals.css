@@ -28,6 +28,13 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #ddd6cb;
+}
+
 p {
     font-size: 1.5rem;
 }
@@ -37,11 +44,35 @@ p a {
     padding-bottom: 0.05rem;
 }
 
+.header {
+    gap: 3rem;
+    color: #ddd6cb;
+    font-size: 1.5rem;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.header h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.header p {
+    margin: 0;
+}
+
+.highlight {
+    background: linear-gradient(#f92a31, #f9ae2a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .cta {
     font-size: 1.5rem;
     display: flex;
     gap: 1rem;
     align-items: center;
+    justify-content: center;
 }
 
 .cta a {
