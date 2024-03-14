@@ -2,6 +2,7 @@
 
 import styles from './image-picker.module.css';
 import { useRef, useState } from 'react';
+import Image from 'next/image';
 
 export default function ImagePicker({ label, name }: { label: string; name: string }) {
   const [pickedImage, setPickedImage] = useState<string | ArrayBuffer | null>(null);
@@ -32,6 +33,13 @@ export default function ImagePicker({ label, name }: { label: string; name: stri
     <div className={styles.picker}>
       <label htmlFor={name}>{label}</label>
       <div className={styles.controls}>
+        <div className={styles.preview}>
+          {pickedImage ? (
+            <Image src={pickedImage as string} alt="Image selected by the user" fill />
+          ) : (
+            <p>No image picked yet.</p>
+          )}
+        </div>
         <input
           className={styles.input}
           type="file"
