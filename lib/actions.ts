@@ -1,6 +1,7 @@
 'use server';
 
 import { saveMeal } from '@/lib/meals';
+import { redirect } from 'next/navigation';
 
 export interface MealFormData {
   title: string;
@@ -28,4 +29,5 @@ export async function shareMeal(formData: FormData) {
   };
 
   await saveMeal(mealFormData);
+  redirect(`/meals/${title}`);
 }
