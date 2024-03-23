@@ -45,6 +45,6 @@ export async function shareMeal(state: { message: string }, formData: FormData) 
     return { message: 'Please fill in all required fields.' };
   }
 
-  await saveMeal(mealFormData);
-  redirect(`/meals/${title}`);
+  const slug: string = await saveMeal(mealFormData);
+  redirect(`/meals/${slug}`);
 }

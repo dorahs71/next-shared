@@ -15,16 +15,19 @@ export async function getMealDetail(slug: string) {
   return db.prepare('SELECT * FROM meals WHERE slug = ?').get(slug);
 }
 
-export async function saveMeal(meal: MealFormData) {
-  await handleMealFormData(meal)
-    .then((mealObj: Meal) => {
-      db.prepare(
+export async function saveMeal(meal: MealFormData): Promise<string> {
+  try {
+    const mealObj: Meal = await handleMealFormData(meal);
+    await db
+      .prepare(
         `INSERT INTO meals(slug, title, image, summary, instructions, creator, creator_email) VALUES (@slug, @title, @image, @summary, @instructions, @creator, @creator_email)`,
-      ).run(mealObj);
-    })
-    .catch((error) => {
-      console.error('Error handling meal form data:', error);
-    });
+      )
+      .run(mealObj);
+    return mealObj.slug;
+  } catch (error) {
+    console.error('Error handling meal form data:', error);
+    throw new Error('Failed to save meal');
+  }
 }
 
 async function handleMealFormData(meal: MealFormData): Promise<Meal> {
