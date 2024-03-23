@@ -12,7 +12,7 @@ export interface MealFormData {
   creator_email: string;
 }
 
-export async function shareMeal(formData: FormData) {
+export async function shareMeal(state: { message: string }, formData: FormData) {
   const title: string = (formData.get('title') as string) ?? '';
   const summary: string = (formData.get('summary') as string) ?? '';
   const instructions: string = (formData.get('instructions') as string) ?? '';
@@ -27,6 +27,23 @@ export async function shareMeal(formData: FormData) {
     creator,
     creator_email,
   };
+
+  function isValidText(text: string): boolean {
+    return !text || text.trim() === '';
+  }
+
+  if (
+    isValidText(title) ||
+    isValidText(summary) ||
+    isValidText(instructions) ||
+    isValidText(creator) ||
+    isValidText(creator_email) ||
+    !creator_email.includes('@') ||
+    !mealFormData.image ||
+    mealFormData.image.size === 0
+  ) {
+    return { message: 'Please fill in all required fields.' };
+  }
 
   await saveMeal(mealFormData);
   redirect(`/meals/${title}`);
