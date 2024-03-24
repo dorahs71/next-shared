@@ -4,6 +4,19 @@ import { Meal } from '@/initdb';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }: { params: { mealSlug: string } }) {
+  const meal: Meal = await getMealDetail(params.mealSlug);
+
+  if (!meal) {
+    notFound();
+  }
+
+  return {
+    title: `${meal.title} | Meals`,
+    description: meal.summary,
+  };
+}
+
 export default async function MealDetailsPage({
   params,
 }: {
