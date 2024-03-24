@@ -4,6 +4,12 @@ import { getMeals } from '@/lib/meals';
 import { Suspense } from 'react';
 import Loading from '@/components/loading/loading';
 import { Meal } from '@/initdb';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'All Meals',
+  description: 'Browse delicious meals shared by our vibrant community.',
+};
 
 async function MealContainer() {
   const meals: Meal[] = await getMeals();

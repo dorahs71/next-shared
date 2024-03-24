@@ -1,4 +1,11 @@
 'use client';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Error',
+  description: 'Error Occurred while fetching meal data.',
+};
+
 export default function Error() {
   return (
     <div className={'error'}>

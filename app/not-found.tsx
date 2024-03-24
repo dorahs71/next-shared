@@ -1,3 +1,10 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Not Found',
+  description: 'Unfortunately, we could not find your requested page or resource.',
+};
+
 export default function NotFound() {
   return (
     <div className={'not-found'}>

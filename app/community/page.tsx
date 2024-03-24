@@ -1,9 +1,14 @@
 import Image from 'next/image';
-
 import mealIcon from '@/assets/icons/meal.svg';
 import communityIcon from '@/assets/icons/community.svg';
 import eventsIcon from '@/assets/icons/events.svg';
 import styles from './page.module.css';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Share Meal Community',
+  description: 'Join our vibrant community to share delicious meals.',
+};
 
 export default function CommunityPage() {
   return (
