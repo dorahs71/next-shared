@@ -2,6 +2,7 @@
 
 import { saveMeal } from '@/lib/meals';
 import { redirect } from 'next/navigation';
+import { revalidatePath } from 'next/cache';
 
 export interface MealFormData {
   title: string;
@@ -46,5 +47,6 @@ export async function shareMeal(state: { message: string }, formData: FormData) 
   }
 
   const slug: string = await saveMeal(mealFormData);
+  revalidatePath('/meals');
   redirect(`/meals/${slug}`);
 }
